@@ -1,0 +1,21 @@
+# Runtime outputs
+results/
+hpo_resolution/
+**/*.vcf
+**/*.vcf.gz
+**/*.vcf.gz.tbi
+
+# Large Exomiser distro bits (stay on server, not in git)
+exomiser-cli-15.0.0/examples/
+exomiser-cli-15.0.0/lib/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets
+.env
+*.pem
+*.key
