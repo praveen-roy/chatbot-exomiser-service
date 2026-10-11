@@ -1,0 +1,17 @@
+name: pr-checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m compileall -q exomiser_vcf_path.py Phenotype_HPO_Extractor
+      - run: pip install pytest && python -m pytest -q tests
